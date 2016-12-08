@@ -1,0 +1,5 @@
+C:\Users\vaver\Downloads\modapi_20160910\modapi_20160910\projects\TheForest\InGameCrosshair\Mod\InGameCrosshair.dll
+C:\Users\vaver\Downloads\modapi_20160910\modapi_20160910\projects\TheForest\InGameCrosshair\Mod\InGameCrosshair.pdb
+C:\Users\vaver\Downloads\modapi_20160910\modapi_20160910\projects\TheForest\InGameCrosshair\obj\x86\Release\InGameCrosshair.dll
+C:\Users\vaver\Downloads\modapi_20160910\modapi_20160910\projects\TheForest\InGameCrosshair\obj\x86\Release\InGameCrosshair.pdb
+C:\Users\vaver\Downloads\modapi_20160910\modapi_20160910\projects\TheForest\InGameCrosshair\obj\x86\Release\InGameCrosshair.csprojResolveAssemblyReference.cache

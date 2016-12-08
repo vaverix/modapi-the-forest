@@ -1,0 +1,50 @@
+<Mod ID="CheatMenuPlus">
+  <Compatible>0.50c</Compatible>
+  <Button Standard="V" ID="OpenMenu">
+    <Name>
+      <EN>Open cheat menu</EN>
+    </Name>
+    <Description>
+      <EN>Key to open the cheat menu which makes it possible to change the activation state of god mode, fly mode and so on.</EN>
+    </Description>
+  </Button>
+  <Button Standard="F" ID="InstantBuild">
+    <Name>
+      <EN>Instant built</EN>
+    </Name>
+    <Description>
+      <EN>Press this key to instant build a blueprint.</EN>
+    </Description>
+  </Button>
+  <Button Standard="T" ID="RemoveBuilding">
+    <Name>
+      <EN>Destroy building</EN>
+    </Name>
+    <Description>
+      <EN>Press this key while looking at a building to destroy it.</EN>
+    </Description>
+  </Button>
+  <Button Standard="F10" ID="Save">
+    <Name>
+      <EN>Save game</EN>
+    </Name>
+    <Description>
+      <EN>Allows you to save game whatever you want.</EN>
+    </Description>
+  </Button>
+  <Button Standard="F11" ID="Suicide">
+    <Name>
+      <EN>Suicide</EN>
+    </Name>
+    <Description>
+      <EN>Disable GodMode and press this key to suicide and respawn in the plane</EN>
+    </Description>
+  </Button>
+  <Name>
+    <EN>CheatMenuPlus</EN>
+  </Name>
+  <Description>
+    <EN>This mod grants you superpowers and some other nice features like instant build or instant tree cutting. Modified by Dr.Culocane.</EN>
+  </Description>
+  <Version>0.2.1.36</Version>
+</Mod>

@@ -1,0 +1,18 @@
+<Mod ID="InGameCrosshair">
+  <Compatible>0.50c</Compatible>
+  <Button Standard="H" ID="togglecrosshair">
+    <Name>
+      <EN>Crosshair</EN>
+    </Name>
+    <Description>
+      <EN>Toggles in-game crosshair.</EN>
+    </Description>
+  </Button>
+  <Name>
+    <EN>InGameCrosshair</EN>
+  </Name>
+  <Description>
+    <EN>Adds crosshair to the game.</EN>
+  </Description>
+  <Version>1.0.0.0</Version>
+</Mod>
