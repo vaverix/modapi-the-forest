@@ -1,23 +1,64 @@
 ﻿using System;
-
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using UnityEngine;
 
 namespace CheatMenuPlus
 {
-    class NewLocalPlayer : TheForest.Utils.LocalPlayer
+    class LocalPlayerCtrl : TheForest.Utils.LocalPlayer
     {
         protected GameObject removeClone;
         protected UITexture removeCloneTexture;
         protected bool ShowRemoveIcon = false;
+        protected bool LastFreeCam = false;
+        protected float rotationY = 0f;
 
         void Update()
         {
-            if (!CheatMenuPlusComponent.InstantBuild)
+            if (CheatMenuPlusCtrl.Options.Other.FreeCam && !LastFreeCam)
+            {
+                CamFollowHead.enabled = false;
+                CamRotator.enabled = false;
+                MainRotator.enabled = false;
+                FpCharacter.enabled = false;
+                LastFreeCam = true;
+            }
+
+            if (!CheatMenuPlusCtrl.Options.Other.FreeCam && LastFreeCam)
+            {
+                CamFollowHead.enabled = true;
+                CamRotator.enabled = true;
+                MainRotator.enabled = true;
+                FpCharacter.enabled = true;
+                LastFreeCam = false;
+            }
+
+            if (CheatMenuPlusCtrl.Options.Other.FreeCam)
+            {
+                bool button1 = TheForest.Utils.Input.GetButton("Crouch");
+                bool button2 = TheForest.Utils.Input.GetButton("Run");
+                bool button3 = TheForest.Utils.Input.GetButton("Jump");
+                float multiplier = 0.1f;
+                if (button2) multiplier = 2f;
+
+                Vector3 vector3 = Camera.main.transform.rotation * (
+                    new Vector3(TheForest.Utils.Input.GetAxis("Horizontal"),
+                    0f,
+                    TheForest.Utils.Input.GetAxis("Vertical")
+                ) * multiplier);
+                if (button3) vector3.y += multiplier;
+                if (button1) vector3.y -= multiplier;
+                Camera.main.transform.position += vector3;
+
+                float rotationX = Camera.main.transform.localEulerAngles.y + TheForest.Utils.Input.GetAxis("Mouse X") * 15f;
+                rotationY += TheForest.Utils.Input.GetAxis("Mouse Y") * 15f;
+                rotationY = Mathf.Clamp(rotationY, -80f, 80f);
+                Camera.main.transform.localEulerAngles = new Vector3(-rotationY, rotationX, 0);
+            }
+
+            if (!CheatMenuPlusCtrl.Options.Player.InstantDestroy)
+            {
                 return;
-            
+            }
+
             try
             {
                 if (removeClone == null)
@@ -66,8 +107,6 @@ namespace CheatMenuPlus
                     mask += 1 << 25;
                     mask += 1 << 21;
                     mask += 1 << 28;
-
-                    //mask = ~((1 << 23) | (1 << 26) | (1 << 27));
                     mask = ~((1 << 18) | (1 << 29));
 
                     if (Physics.Raycast(r, out hitInfo, 4f, mask))
@@ -78,19 +117,25 @@ namespace CheatMenuPlus
                         {
                             ent = t.GetComponentInParent<BoltEntity>();
                             if (ent == null || !ent.StateIs<IBuildingState>())
+                            {
                                 t = null;
+                            }
                         }
                         else
                         {
                             if (t.GetComponentInParent<TheForest.Buildings.World.BuildingHealth>() == null && t.GetComponentInParent<TheForest.Buildings.World.FoundationHealth>() == null)
+                            {
                                 t = null;
+                            }
                             else
                             {
                                 while (t.parent != null)
+                                {
                                     t = t.parent; // Find main object
+                                }
                             }
                         }
-                        
+
                         if (t != null)
                         {
                             ShowRemoveIcon = true;
@@ -101,13 +146,16 @@ namespace CheatMenuPlus
                                 {
                                     if (ent != null)
                                     {
-                                        DestroyBuilding building = DestroyBuilding.Raise(Bolt.GlobalTargets.OnlyServer);
+                                        DestroyBuilding building = DestroyBuilding.Create(Bolt.GlobalTargets.OnlyServer);
+                                        //DestroyBuilding building = DestroyBuilding.Raise(Bolt.GlobalTargets.OnlyServer);
                                         building.BuildingEntity = ent;
                                         building.Send();
                                     }
                                 }
                                 else
+                                {
                                     Destroy(t.gameObject);
+                                }
                             }
                         }
                         else
@@ -126,19 +174,6 @@ namespace CheatMenuPlus
             {
                 ModAPI.Log.Write(e.ToString());
             }
-        }
-
-        void OnGUI()
-        {            
-            /*if (cam != null)
-            {
-                float x = cam.pixelWidth * 0.6f;
-                float y = cam.pixelHeight * 0.7f;
-                float width = cam.pixelWidth * 0.06f;
-                Texture2D tex = ModAPI.Resources.GetTexture("RemoveBuilding.png");
-                UnityEngine.GUI.DrawTexture(new Rect(x,y,width,width), tex);
-                UnityEngine.GUI.Label(new Rect(x + width * 0.8f, y + width * 0.8f, width * 0.2f, width * 0.2f), ModAPI.Input.GetKeyBindingAsString("RemoveBuilding"));
-            }*/
         }
     }
 }

@@ -1,5 +1,5 @@
-C:\Users\vaver\Downloads\modapi_20160910\modapi_20160910\projects\TheForest\CheatMenuPlus\obj\x86\Release\CheatMenuPlus.csprojResolveAssemblyReference.cache
 C:\Users\vaver\Downloads\modapi_20160910\modapi_20160910\projects\TheForest\CheatMenuPlus\Mod\CheatMenuPlus.dll
 C:\Users\vaver\Downloads\modapi_20160910\modapi_20160910\projects\TheForest\CheatMenuPlus\Mod\CheatMenuPlus.pdb
+C:\Users\vaver\Downloads\modapi_20160910\modapi_20160910\projects\TheForest\CheatMenuPlus\obj\x86\Release\CheatMenuPlus.csprojResolveAssemblyReference.cache
 C:\Users\vaver\Downloads\modapi_20160910\modapi_20160910\projects\TheForest\CheatMenuPlus\obj\x86\Release\CheatMenuPlus.dll
 C:\Users\vaver\Downloads\modapi_20160910\modapi_20160910\projects\TheForest\CheatMenuPlus\obj\x86\Release\CheatMenuPlus.pdb
