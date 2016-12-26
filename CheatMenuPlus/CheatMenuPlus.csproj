@@ -169,17 +169,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AtmosphereCtrl.cs"  />
-<Compile Include="BoltPlayerSetupCtrl.cs"  />
 <Compile Include="BuildingRepairCtrl.cs"  />
 <Compile Include="CraftStructureCtrl.cs"  />
-<Compile Include="Extensions.cs"  />
 <Compile Include="CharacterCtrl.cs"  />
 <Compile Include="CheatMenuPlusCtrl.cs"  />
 <Compile Include="EnemyHealthCtrl.cs"  />
 <Compile Include="LocalPlayerCtrl.cs"  />
 <Compile Include="PlayerStatsCtrl.cs"  />
+<Compile Include="RemoveBuildings.cs"  />
 <Compile Include="TreeHealthCtrl.cs"  />
-<Compile Include="WallAdditionCtrl.cs"  />
 <Compile Include="WeatherSystemCtrl.cs"  />
 
   </ItemGroup>

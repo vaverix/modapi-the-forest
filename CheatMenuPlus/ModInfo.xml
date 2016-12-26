@@ -1,5 +1,5 @@
 <Mod ID="CheatMenuPlus">
-  <Compatible>0.51</Compatible>
+  <Compatible>0.52b</Compatible>
   <Button Standard="V" ID="OpenMenu">
     <Name>
       <EN>Open cheat menu</EN>
@@ -62,5 +62,5 @@
   <Description>
     <EN>This mod grants you superpowers and some other nice features like instant build or instant tree cutting. Modified by Dr.Culocane.</EN>
   </Description>
-  <Version>0.3.0.0</Version>
+  <Version>0.3.1.1</Version>
 </Mod>

@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using UnityEngine;
-using System.Reflection;
 
 namespace CheatMenuPlus
 {
@@ -62,6 +58,7 @@ namespace CheatMenuPlus
         {
             GameObject GO = new GameObject("__CheatMenuPlus__");
             GO.AddComponent<CheatMenuPlusCtrl>();
+            GO.AddComponent<RemoveBuildings>();
         }
 
         public void DisplayText(string text)
@@ -130,10 +127,6 @@ namespace CheatMenuPlus
 
                 //GUI.Label(new Rect(offsetX, cY, 150f, 20f), "Magic Aura:", labelStyle);
                 //Options.Other.Aura = GUI.Toggle(new Rect(offsetX + 150f, cY, 20f, 30f), Options.Other.Aura, "");
-                //cY += offsetY;
-
-                //GUI.Label(new Rect(offsetX, cY, 150f, 20f), "Magic Sphere:", labelStyle);
-                //Options.Other.Sphere = GUI.Toggle(new Rect(offsetX + 150f, cY, 20f, 30f), Options.Other.Sphere, "");
                 //cY += offsetY;
 
                 GUI.Label(new Rect(offsetX, cY, 150f, 20f), "Freeze Weather:", labelStyle);

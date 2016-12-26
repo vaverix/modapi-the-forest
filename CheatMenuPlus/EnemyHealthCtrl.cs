@@ -6,7 +6,8 @@
         {
             if (CheatMenuPlusCtrl.Options.Player.InstantKill)
             {
-                base.HitReal(damage * 1000);
+                //base.HitReal(damage * 1000);
+                base.Die();
             }
             else
             {
