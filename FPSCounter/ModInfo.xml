@@ -1,5 +1,5 @@
 <Mod ID="FPSCounter">
-  <Compatible>0.50c</Compatible>
+  <Compatible>0.52b</Compatible>
   <Button Standard="LeftShift+F" ID="togglefpscounter">
     <Name>
       <EN>FPSCounter</EN>
@@ -14,5 +14,5 @@
   <Description>
     <EN>Shows Frames Per Second in the left top corner.</EN>
   </Description>
-  <Version>1.0.0.4</Version>
+  <Version>1.0.2</Version>
 </Mod>

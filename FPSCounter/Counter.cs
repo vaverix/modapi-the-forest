@@ -1,51 +1,47 @@
-﻿using ModAPI;
-using ModAPI.Attributes;
-using System;
+﻿using ModAPI.Attributes;
 using UnityEngine;
 
 namespace FPSCounter
 {
     public class Counter : MonoBehaviour
     {
-        private int frames;
-
-        private float dt;
-
-        private float fps;
-
-        private bool _visible;
+        private float deltaTime = 0.0f;
+        private bool visible;
 
         [ExecuteOnGameStart]
         private static void AddMeToScene()
         {
             GameObject e0A = new GameObject("__FPSCounter__");
             e0A.AddComponent<Counter>();
-            UnityEngine.Object.DontDestroyOnLoad(e0A);
-        }
-
-        private void OnGUI()
-        {
-            if (this._visible)
-            {
-                UnityEngine.GUI.color = UnityEngine.Color.yellow;
-                UnityEngine.GUI.Label(new Rect(0f, 0f, 100f, 100f), "FPS: " + this.fps);
-            }
+            DontDestroyOnLoad(e0A);
         }
 
         private void Update()
         {
             if (ModAPI.Input.GetButtonDown("togglefpscounter"))
             {
-                this._visible = !this._visible;
+                visible = !visible;
             }
-            this.frames++;
-            this.dt += Time.deltaTime;
-            if (this.dt > 1f)
+            deltaTime += (Time.deltaTime - deltaTime) * 0.1f;
+        }
+
+        private void OnGUI()
+        {
+            if (!visible)
             {
-                this.fps = (float)this.frames;
-                this.dt -= 1f;
-                this.frames = 0;
+                return;
             }
+
+            int w = Screen.width, h = Screen.height;
+            GUIStyle style = new GUIStyle();
+            Rect rect = new Rect(0, 0, w, h * 2 / 100);
+            style.alignment = TextAnchor.UpperLeft;
+            style.fontSize = h * 2 / 100;
+            style.normal.textColor = Color.yellow;
+            float msec = deltaTime * 1000.0f;
+            float fps = Mathf.Clamp(1.0f / deltaTime, 0f, 999f);
+            string text = string.Format("{0:0.0} ms ({1:0.} fps)", msec, fps);
+            GUI.Label(rect, text, style);
         }
     }
 }
