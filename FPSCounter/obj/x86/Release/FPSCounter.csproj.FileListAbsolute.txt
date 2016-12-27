@@ -1,5 +1,0 @@
-C:\Users\vaver\Downloads\modapi_20160910\modapi_20160910\projects\TheForest\FPSCounter\Mod\FPSCounter.dll
-C:\Users\vaver\Downloads\modapi_20160910\modapi_20160910\projects\TheForest\FPSCounter\Mod\FPSCounter.pdb
-C:\Users\vaver\Downloads\modapi_20160910\modapi_20160910\projects\TheForest\FPSCounter\obj\x86\Release\FPSCounter.csprojResolveAssemblyReference.cache
-C:\Users\vaver\Downloads\modapi_20160910\modapi_20160910\projects\TheForest\FPSCounter\obj\x86\Release\FPSCounter.dll
-C:\Users\vaver\Downloads\modapi_20160910\modapi_20160910\projects\TheForest\FPSCounter\obj\x86\Release\FPSCounter.pdb
